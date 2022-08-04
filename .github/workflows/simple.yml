@@ -20,6 +20,7 @@ jobs:
         shell: python
   run-windows-commands:
     runs-on: windows-latest
+    needs: ["run-shell-command"] # This job depends on the "run-shell-command" job to finish
     steps:
       - name: Directory PowerShell # This is the default shell for windows
         run: Get-Location
