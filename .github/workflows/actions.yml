@@ -13,4 +13,4 @@ jobs:
         with:
           who-to-greet: John # This is an input parameter the action can recive
       - name: Log Greeting Time
-        run: echo "${{ steps.greet.output.time}}" # This reference the output of the step before
+        run: echo "${{steps.greet.outputs.time}}" # This reference the output of the step before
