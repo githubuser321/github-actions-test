@@ -6,6 +6,14 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+        # This is the checkout official action for checing out the code we are at
+      - name: Checkout code from Github
+        uses: actions/checkout@v2
+        # List files after checkout
+      - name: List files
+        run: |
+          pwd
+          ls -la
       - name: Simple JS Action
         id: greet
         # see https://github.com/actions/hello-world-javascript-action
