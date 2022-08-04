@@ -1,0 +1,16 @@
+name: External Actions Reference Example
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        id: greet
+        # see https://github.com/actions/hello-world-javascript-action
+        uses: actions/hello-world-javascript-action@v1 # This is a public published action, but we can also use our own
+        with:
+          who-to-greet: John # This is an input parameter the action can recive
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.output.time}}" # This reference the output of the step before
