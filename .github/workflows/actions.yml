@@ -1,12 +1,27 @@
 name: External Actions Reference Example
 
 on:
+  #################
+  # push:
+  #   branches: # Only trigger for specified branches
+  #     - master # master branch
+  #     - 'feature/*' # any branch that matches feature/<something>
+  #     - 'feature/**' # any branch that matches feature/<something>/<something>
+  #     - '!feature/badBranch' # 'Ignore this specific branch'
+  #   tags:
+  #     - v1.* # Trigger when tag is like v1.<somthing>
+  #   paths:
+  #     - '**.js' # Trigger for all Javascript files
+  #     - '!filename.js' # Ignore when this file is changed
+  #################
   # schedule:
   #   - cron: "0/5 * * * *"
   #   - cron: "0/6 * * * *"
-  # push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  #################
+  push:
+  #################
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
